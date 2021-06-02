@@ -15,26 +15,17 @@
 const itemlength = function () {
   const item = document.querySelectorAll('.item');
   const lengthItem = item.length;
-  return console.log(`У списку ${lengthItem} категорії.`);
+  return console.log(`В списке ${lengthItem} категории.`);
 };
 itemlength();
 const ulCategories = document.querySelector('#categories');
 
-const itemlifirst = ulCategories.firstElementChild;
-
-const itemlilast = ulCategories.lastElementChild;
-
-const elemUl = ulCategories.querySelectorAll('ul');
-const title = ulCategories.querySelectorAll('h2');
-
-console.log(elemUl);
-console.log(title);
-const elemBytitle = title.forEach((elem) => {
-  return console.log(elem.textContent);
-});
-console.log(elemBytitle);
+const elemUl = ulCategories.querySelectorAll('.item');
 
 const elemByul = elemUl.forEach((elem) => {
-  return console.log(elem);
+  console.log(`-Категория: ${elem.firstElementChild.textContent}`);
+
+  console.log(
+    ` -Количество элементов: ${elem.lastElementChild.children.length}`
+  );
 });
-console.log(elemByul);
