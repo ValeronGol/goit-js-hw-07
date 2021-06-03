@@ -32,6 +32,6 @@ const ulGallery = document.querySelector('#gallery');
 images.forEach((image) => {
   ulGallery.insertAdjacentHTML(
     'afterbegin',
-    `<li class='gallery__item'><img src=${image.url} alt="${image.alt}" class = 'gallery_img' ></li>`
+    `<li class='gallery__item'><img src=${image.url} alt="${image.alt}" class = 'gallery__img' ></li>`
   );
 });
