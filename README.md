@@ -1,100 +1,3 @@
-**Читать на других языках: [Русский](README.md), [Українська](README.ua.md).**
-
-# Критерии приема
-
-- Создан репозиторий `goit-js-hw-07`
-- При сдаче домашней работы есть две ссылки: на исходные файлы и рабочую
-  страницу на GitHub pages
-- Задание выполнено строго по ТЗ
-- Каждое задание выполнено в отдельном файле с именем `task-номер_задания.js`.
-- При посещении рабочей страницы (GitHub pages) задания, в консоли нету ошибок и
-  предупреждений
-- Имена переменных и функций понятные, описательные
-- Код отформатирован с помощью Prettier
-
-## Стартовые файлы
-
-В папке [src](./src) ты найдешь стартовые файлы проекта с базовой разметкой и
-подключенными файлами скриптов для каждого задания.
-
-## Задание 1
-
-В HTML есть список категорий `ul#categories`.
-
-```html
-<ul id="categories">
-  <li class="item">
-    <h2>Животные</h2>
-
-    <ul>
-      <li>Кот</li>
-      <li>Хомяк</li>
-      <li>Лошадь</li>
-      <li>Попугай</li>
-    </ul>
-  </li>
-  <li class="item">
-    <h2>Продукты</h2>
-
-    <ul>
-      <li>Хлеб</li>
-      <li>Петрушка</li>
-      <li>Творог</li>
-    </ul>
-  </li>
-  <li class="item">
-    <h2>Технологии</h2>
-
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>React</li>
-      <li>Node</li>
-    </ul>
-  </li>
-</ul>
-```
-
-Напиши скрипт, который выполнит следующие операции.
-
-Посчитает и выведет в консоль количество категорий в `ul#categories`, то есть
-элементов `li.item`. Получится `'В списке 3 категории.'`.
-
-Для каждого элемента `li.item` в списке `ul#categories`, найдет и выведет в
-консоль текст заголовка элемента (тега h2) и количество элементов в категории
-(всех вложенных в него элементов `li`).
-
-Например для первой категории получится:
-
-- Категория: Животные
-- Количество элементов: 4
-
-## Задание 2
-
-В HTML есть пустой список `ul#ingredients`.
-
-```html
-<ul id="ingredients"></ul>
-```
-
-В JS есть массив строк.
-
-```js
-const ingredients = [
-  'Картошка',
-  'Грибы',
-  'Чеснок',
-  'Помидоры',
-  'Зелень',
-  'Приправы',
-];
-```
-
-Напиши скрипт, который для каждого элемента массива `ingredients` создаст
-отдельный `li`, после чего вставит все `li` за одну операцию в список
-`ul.ingredients`. Для создания DOM-узлов используй `document.createElement()`.
-
 ## Задание 3
 
 Напиши скрипт для создания галлереи изображений по массиву данных.
@@ -115,18 +18,15 @@ const ingredients = [
 ```js
 const images = [
   {
-    url:
-      'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     alt: 'White and Black Long Fur Cat',
   },
   {
-    url:
-      'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    url: 'https://images.pexels.com/photos/213399/pexels-photo-213399.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     alt: 'Orange and White Koi Fish Near Yellow Koi Fish',
   },
   {
-    url:
-      'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     alt: 'Group of Horses Running',
   },
 ];
