@@ -32,7 +32,6 @@ const ingredients = [
 const ulIngredients = document.querySelector('#ingredients');
 
 ingredients.forEach((ingredient) => {
-  console.log(ingredient);
   const itemEl = document.createElement('li');
   itemEl.textContent = ingredient;
   ulIngredients.append(itemEl);
