@@ -5,7 +5,7 @@
 const inputName = document.querySelector('#name-input');
 const youName = document.querySelector('#name-output');
 
-inputName.addEventListener('input', onInputChange);
+inputName.addEventListener('input', nameChange);
 
 function nameChange(name) {
   youName.textContent = name.currentTarget.value || 'незнакомец';
