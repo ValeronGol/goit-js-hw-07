@@ -32,8 +32,8 @@ function renderBoxes() {
 }
 
 function destroyBoxes() {
-  divBoxes.innerHTML = '';
-  box.value = '';
+  boxes.innerHTML = '';
+  firstBox.value = '';
   sizeBox = 30;
 }
 
