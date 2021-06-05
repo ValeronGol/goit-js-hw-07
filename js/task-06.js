@@ -12,8 +12,8 @@ const dataLength = Number(validationIn.dataset.length);
 
 validationIn.addEventListener('blur', onInputChangefocus);
 
-function onInputChangefocus(event) {
-  if (dataLength !== event.currentTarget.value.length) {
+function onInputChangefocus(elem) {
+  if (dataLength !== elem.currentTarget.value.length) {
     validationIn.classList.add('invalid');
     validationIn.classList.remove('valid');
   } else {

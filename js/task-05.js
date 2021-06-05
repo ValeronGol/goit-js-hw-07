@@ -6,6 +6,10 @@ const inputName = document.querySelector('#name-input');
 const youName = document.querySelector('#name-output');
 
 function nameChange(name) {
-  youName.textContent = name.currentTarget.value || 'незнакомец';
+  if (!name.currentTarget.value.trim()) {
+    youName.textContent = 'незнакомец';
+  } else {
+    youName.textContent = name.currentTarget.value;
+  }
 }
 inputName.addEventListener('input', nameChange);

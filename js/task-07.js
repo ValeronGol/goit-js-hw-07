@@ -2,3 +2,11 @@
 // (событие input) и изменяет инлайн-стиль `span#text` обновляя свойство
 // `font-size`. В результате при перетаскивании ползунка будет меняться размер
 // текста.
+
+const sizeControl = document.getElementById('font-size-control');
+
+const text = document.getElementById('text');
+
+sizeControl.addEventListener('input', (elem) => {
+  text.style.fontSize = `${elem.target.value}px`;
+});
