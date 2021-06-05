@@ -15,3 +15,45 @@
 //   10px
 
 // Создай функцию `destroyBoxes()`, которая очищает `div#boxes`.
+
+const control = document.querySelector('#controls');
+const firstBox = control.firstElementChild;
+const render = document.querySelector('[data-action="render"]');
+const destroy = document.querySelector('[data-action="destroy"]');
+const boxes = document.querySelector('#boxes');
+
+let sizeBox = 30;
+
+render.addEventListener('click', renderBoxes);
+destroy.addEventListener('click', destroyBoxes);
+
+function renderBoxes() {
+  boxes.append(...createBoxes(firstBox.value));
+}
+
+function destroyBoxes() {
+  divBoxes.innerHTML = '';
+  box.value = '';
+  sizeBox = 30;
+}
+
+function createBoxes(amount) {
+  const divBoxes = [];
+
+  for (let i = 0; i < amount; i += 1) {
+    const div = document.createElement('div');
+    div.style.backgroundColor = `rgb(${Math.round(
+      Math.random() * 255
+    )}, ${Math.round(Math.random() * 255)}, ${Math.round(
+      Math.random() * 255
+    )})`;
+    div.style.height = `${sizeBox}px`;
+    div.style.width = `${sizeBox}px`;
+    div.style.border = '1px solid #bdbdbd';
+    div.style.marginBottom = '5px';
+
+    divBoxes.push(div);
+    sizeBox += 10;
+  }
+  return divBoxes;
+}
