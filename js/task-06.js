@@ -7,17 +7,15 @@
 
 // Для добавления стилей, используй CSS-классы `valid` и `invalid`.
 
-const validationIn = document.querySelector('#validation-input');
-const dataLength = Number(validationIn.dataset.length);
+const validationIn = document.getElementById('validation-input');
+Number(validationIn.dataset.length);
 
-validationIn.addEventListener('blur', onInputChangefocus);
-
-function onInputChangefocus(elem) {
-  if (dataLength !== elem.currentTarget.value.length) {
+validationIn.addEventListener('blur', (elem) => {
+  if (Number(validationIn.dataset.length) !== elem.currentTarget.value.length) {
     validationIn.classList.add('invalid');
     validationIn.classList.remove('valid');
   } else {
     validationIn.classList.add('valid');
     validationIn.classList.remove('invalid');
   }
-}
+});
