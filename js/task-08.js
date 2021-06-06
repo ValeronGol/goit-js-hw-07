@@ -24,24 +24,22 @@ const boxes = document.querySelector('#boxes');
 
 let sizeBox = 30;
 
-render.addEventListener('click', renderBoxes);
+render.addEventListener('click', createBoxes);
 destroy.addEventListener('click', destroyBoxes);
 
-function renderBoxes() {
-  boxes.append(...createBoxes(firstBox.value));
-}
-
-function destroyBoxes() {
-  boxes.innerHTML = '';
-  firstBox.value = '';
-  sizeBox = 30;
-}
-
 function createBoxes(amount) {
-  const divBoxes = [];
+  amount = firstBox.value;
 
-  for (let i = 0; i < amount; i += 1) {
-    const div = document.createElement('div');
+  let sizeBox = 30;
+  if (boxes.children.length > 0) {
+    sizeBox = parseInt(boxes.lastChild.style.width) + 10;
+  }
+
+  let divBoxes = [];
+  divBoxes.length = Number(amount);
+
+  const creatBox = [...divBoxes].map((div) => {
+    div = document.createElement('div');
     div.style.backgroundColor = `rgb(${Math.round(
       Math.random() * 255
     )}, ${Math.round(Math.random() * 255)}, ${Math.round(
@@ -53,7 +51,16 @@ function createBoxes(amount) {
     div.style.marginBottom = '5px';
 
     divBoxes.push(div);
+
     sizeBox += 10;
-  }
-  return divBoxes;
+    return div;
+  });
+
+  boxes.append(...creatBox);
+}
+
+function destroyBoxes() {
+  boxes.innerHTML = '';
+  firstBox.value = '';
+  sizeBox = 30;
 }
