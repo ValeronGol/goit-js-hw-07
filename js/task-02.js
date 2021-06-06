@@ -31,8 +31,12 @@ const ingredients = [
 ];
 const ulIngredients = document.querySelector('#ingredients');
 
-ingredients.forEach((ingredient) => {
+const makeItemEl = (elem) => {
   const itemEl = document.createElement('li');
-  itemEl.textContent = ingredient;
-  ulIngredients.append(itemEl);
-});
+  itemEl.textContent = elem;
+  return itemEl;
+};
+
+const elements = ingredients.map(makeItemEl);
+
+ulIngredients.append(...elements);
